@@ -7,7 +7,7 @@ def home ( request ):
     remeras = Remera.objects.all()
     return render(request, "my-app/home.html", {'remeras':remeras})
 
-def add_remera(request):
+'''def add_remera(request):
     if request.method == 'POST':
         form = RemeraForm(request.POST, request.FILES)
         if form.is_valid():
@@ -15,7 +15,8 @@ def add_remera(request):
             return redirect('home')
     else:
         form = RemeraForm()
-    return render (request, 'my-app/add_remera.html', {'form':form})        
+    return render (request, 'my-app/add_remera.html', {'form':form})     
+'''
 
 def contacto(request):
     return render (request, "my-app/contacto.html")

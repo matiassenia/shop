@@ -24,10 +24,10 @@ class Remera(models.Model):
     precio = models.DecimalField(max_digits=10, decimal_places=2)
     imagen = models.ImageField(upload_to='remeras/')
     marca = models.CharField(max_length=50)
-    talle = models.IntegerField(choices=TALLE_CHOICES)
+    talle = models.PositiveSmallIntegerField(choices=TALLE_CHOICES)
     color = models.CharField(max_length=50)
     lisa = models.BooleanField(default=True)
-    genero = models.IntegerField(choices=GENERO_CHOICES)
+    genero = models.PositiveSmallIntegerField(choices=GENERO_CHOICES)
     
     def __str__(self):
-        return self.nombre
+        return f"{self.nombre} - {self.marca} - {self.get_talle_display()} - {self.color}"

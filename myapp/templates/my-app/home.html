@@ -33,7 +33,7 @@
             <td>{{ remera.marca }}</td>
             <td>{{ remera.get_talle_display }}</td>
             <td>{{ remera.color }}</td>
-            <td>{{ remera.lisa|yesno:"Sí,No" }}</td>
+            <td>{% if remera.lisa %}Si{% else %} No{% endif %}</td>
             <td>{{ remera.get_genero_display }}</td>
         </tr>
         {% endfor %}
