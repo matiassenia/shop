@@ -1,42 +1,33 @@
 <!-- templates/my-app/base.html -->
 {% extends 'my-app/base.html' %}
 
-{% block title %}Inicio - Shop{% endblock %}
+{% block title %}Inicio - Tienda de indumentaria{% endblock %}
 
 {% block content %}
 <h1>Bienvenido a nuestra tienda</h1>
 <p>Explora nuestra colección de indumentaria.</p>
-
 <h2>Catálogo de Remeras</h2>
-<table>
-
-    <thead>
-        <tr>
-            <th>Imagen</th>
-            <th>Nombre</th>
-            <th>Descripción</th>
-            <th>Precio</th>
-            <th>Marca</th>
-            <th>Talle</th>
-            <th>Color</th>
-            <th>Lisa</th>
-            <th>Género</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for remera in remeras %}
-        <tr>
-            <td><img src = "{{remera.imagen.url}}" alt = "{{remera.nombre}}" style="max-width: 100px"></td>
-            <td>{{ remera.nombre }}</td>
-            <td>{{ remera.descripcion }}</td>
-            <td>${{ remera.precio }}</td>
-            <td>{{ remera.marca }}</td>
-            <td>{{ remera.get_talle_display }}</td>
-            <td>{{ remera.color }}</td>
-            <td>{% if remera.lisa %}Si{% else %} No{% endif %}</td>
-            <td>{{ remera.get_genero_display }}</td>
-        </tr>
+<div class= "card-container">
+    {% for remera in remeras %}
+    <div class="card">
+        <div class="card-image">
+            {% if remera.imagen %}
+                <img src = "{{remera.imagen.url}}" alt = "{{remera.nombre}}" >
+                {% else %}
+                No image
+                {% endif %}
+        </div> 
+        <div class="card-content"> 
+            <h2>{{ remera.nombre }}</h2>
+            <p>{{ remera.descripcion }}</p>
+            <p><strong>Precio:</strong> ${{ remera.precio }}</p>
+            <p><strong>Marca:</strong> {{ remera.marca }}</p>
+            <p><strong>Talle:</strong> {{ remera.get_talle_display }}</p>
+            <p><strong>Color:</strong> {{ remera.color }}</p>
+            <p><strong>Lisa:</strong> {{ remera.lisa|yesno:"Sí,No" }}</p>
+            <p><strong>Género:</strong> {{ remera.get_genero_display }}</p>
+        </div>
+    </div>       
         {% endfor %}
-    </tbody>
-</table>
-{% endblock %}    
+</div>       
+{% endblock %}
