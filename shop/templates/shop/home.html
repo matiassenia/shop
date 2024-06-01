@@ -5,8 +5,8 @@
 
 {% block content %}
 <h1>Bienvenido a nuestra tienda</h1>
-<p>Explora nuestra colección de indumentaria.</p>
-<h2>Catálogo de Remeras</h2>
+<p>Explora nuestra colección.</p>
+<h2>Catálogo de Camisetas</h2>
 <div class= "card-container">
     {% for remera in remeras %}
     <div class="card">
@@ -26,6 +26,7 @@
             <p><strong>Color:</strong> {{ remera.color }}</p>
             <p><strong>Lisa:</strong> {{ remera.lisa|yesno:"Sí,No" }}</p>
             <p><strong>Género:</strong> {{ remera.get_genero_display }}</p>
+            <a href="{% url 'agregar_al_carrito' remera.id %}">Agregar al carrito</a>
         </div>
     </div>       
         {% endfor %}
