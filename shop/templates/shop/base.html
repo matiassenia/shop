@@ -1,0 +1,39 @@
+<!-- templates/shop/base.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Shop{% endblock %}</title>
+    <link rel="stylesheet" href="{% static '/css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>PASION CASACA INDUMENTARIA</h1>   
+                <h2>Lo importante es el amor por la camiseta</h2>     
+                <a href="{% url 'home' %}">
+                    <img src="{% static 'img/logo-shop.png' %}" alt="Logo de la Tienda">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'home' %}">Inicio</a></li>
+                    <li><a href="{% url 'contacto' %}">Contacto</a></li>
+                    <li><a href="{% url 'ver_carrito' %}">Carrito</a></li>
+                    <li><a href="{% url 'login' %}">Iniciar Sesión</a></li>
+                </ul>
+            </nav>
+        </div>  
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2024 Pasión Casaca Online - creado por Matías Senia - </p>
+        <p>Seguime en <a href="https://www.linkedin.com/in/matiassenia/" target="_blank">LinkedIn</a></p>
+    </footer>
+</body>
+</html>

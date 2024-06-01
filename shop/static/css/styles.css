@@ -1,4 +1,6 @@
 /* Reset CSS */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +9,7 @@
 
 /* Body and general styles */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: "Montserrat", sans-serif;
     background: linear-gradient(to right, #f8f9fa, #e9ecef);
     color: #343a40;
     line-height: 1.6;
@@ -16,12 +18,45 @@ body {
 
 /* Header styles */
 header {
-    background: #343a40;
+    background: transparent;
     color: #fff;
     padding: 20px 0;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+.header-container h1 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  /* Sombreado para el texto del logo */
+    color: white;
+    font-size: 3em;
+}
+
+
+.header-container h2 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  /* Sombreado para el texto del logo */
+    color: white;
+    font-size: 1em;
+}
+
+.header-container a {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  
+    color: white;
+    font-size: 1em;
+}
+
+
+.header-container {
+    background: url('../img/backgroundhead.jpeg') no-repeat center center;
+    background-size: cover;
+    padding: 20px;
+    text-align: center;
+}
+
+.header-container img {
+    max-width: 100%;
+    height: auto;
+}
+
 
 header .logo img {
     max-width: 150px;

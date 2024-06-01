@@ -1,0 +1,40 @@
+{% extends 'shop/base.html' %}
+
+{% block content %}
+<h1>Mi Carrito</h1>
+{% if elementos %}
+    <table>
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Precio Unitario</th>
+                <th>Total</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for elemento in elementos %}
+            <tr>
+                <td>{{ elemento.remera.nombre }}</td>
+                <td>
+                    <form action="{% url 'actualizar_cantidad_elemento_carrito' elemento.id %}" method="post">
+                        {% csrf_token %}
+                        <input type="number" name="cantidad" value="{{ elemento.cantidad }}" min="1">
+                        <button type="submit">Actualizar</button>
+                    </form>
+                </td>
+                <td>${{ elemento.remera.precio }}</td>
+                <td>${{ elemento.get_total_precio }}</td>
+                <td>
+                    <a href="{% url 'eliminar_elemento_carrito' elemento.id %}">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h2>Total: ${{ carrito.get_total_precio }}</h2>
+{% else %}
+    <p>Tu carrito está vacío.</p>
+{% endif %}
+{% endblock %}
