@@ -17,11 +17,6 @@ Este es un proyecto de una tienda de indumentaria desarrollado utilizando Django
 - Bootstrap: Marco de trabajo CSS utilizado para el diseño receptivo y la interfaz de usuario.
 
 
-## Tabla de Contenidos
-
-- [Instalación](#instalación)
-- [Uso](#uso)
-
 ## Instalación
 
 1.Clona este repositorio en tu máquina local.
