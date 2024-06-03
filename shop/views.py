@@ -42,8 +42,15 @@ def eliminar_elemento_carrito(request, elemento_id):
     return redirect('ver_carrito')
 
 @login_required
-def actualizar_cantidad_elemento_carrito(request, elemento_id, nueva_cantidad):
-    elemento = get_object_or_404(ElementoCarrito, id=elemento_id)
-    elemento.cantidad = nueva_cantidad
-    elemento.save()
+def actualizar_cantidad_elemento_carrito(request, elemento_id):
+    if request.method == "POST":
+        nueva_cantidad = request.POST.get('cantidad')
+        if nueva_cantidad is not None:
+            try: 
+                nueva_cantidad=int(nueva_cantidad)      
+                elemento = get_object_or_404(ElementoCarrito, id=elemento_id)
+                elemento.cantidad = nueva_cantidad
+                elemento.save()
+            except ValueError:
+                pass
     return redirect('ver_carrito')
