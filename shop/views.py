@@ -5,6 +5,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from .models import Remera, Carrito, ElementoCarrito
 from .forms import RegistroForm
+from django.contrib.auth.forms import AuthenticationForm
 
 #
 @login_required
@@ -70,28 +71,27 @@ def registro(request):
             user = form.save()
             login(request, user)
             messages.success(request, f'Registro exitoso! Bienvenido {user.username}!')
-            return redirect('base')
+            return redirect('home')
+        else:
+            messages.error(request, 'Hubo un error intenta nuevamente.')
     else:
         form = RegistroForm()
-        messages.error(request, 'Hubo un error intenta nuevamente.')
     return render(request, 'registration/registro.html', {'form': form})    
 
 
 #Login y autenticación
 def login_view(request):
     if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
-        
-        #Autenticación del usuario
-        user = authenticate(request, username=username, password=password)
-        
-        if user is not None:
-            # Si el usuario es autenticado correctamente, inicia sesión
+        form = AuthenticationForm(request, request.POST)
+        if form.is_valid():
+            user= form.get_user()
             login(request, user)
-            messages.success(request, f'Bienvenido de nuevo{user.username}!')
+            messages.success(request, f'Bienvenido de nuevo {user.username}!')
+            return redirect('')
         else:
-            # Si el usuario no puede ser autenticado, muestra un mensaje de error
             messages.error(request, 'Nombre de usuario o contraseña incorrectos.')
-
-    return render(request, 'login.html')
+    else:
+        if request.user.is_authenticated:
+            return redirect('home')
+        form = AuthenticationForm()
+    return render (request, 'login.html', {'form':form})
