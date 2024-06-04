@@ -12,7 +12,7 @@
         <div class="header-container">
             <div class="logo">
                 <h1>PASIÓN POR LA CAMISETA</h1>   
-                <h2>Futbol Store</h2>     
+                <h2> - Futbol Store - </h2>     
                 <a href="{% url 'home' %}">
                     <img src="{% static 'img/logo-shop.png' %}" alt="Logo de la Tienda">
                 </a>
@@ -22,8 +22,15 @@
                     <li><a href="{% url 'home' %}">Inicio</a></li>
                     <li><a href="{% url 'contacto' %}">Contacto</a></li>
                     <li><a href="{% url 'carrito' %}">Carrito</a></li>
-                    <li><a href="{% url 'login' %}">Iniciar Sesión</a></li>
-                    <li><a href="{% url 'registro' %}">Registro</a></li>
+                    {% if user.is_authenticated %}
+                        <p>Bienvenido, {{ user.username }}!</p>
+                        <form method="post" action="{% url 'logout' %}">
+                            {% csrf_token %}
+                            <button type="submit">Cerrar sesión</button>
+                        </form>
+                    {% else %}
+                        <a href="{% url 'login' %}">Iniciar Sesión</a>
+                    {% endif %}
                 </ul>
             </nav>
         </div>  
