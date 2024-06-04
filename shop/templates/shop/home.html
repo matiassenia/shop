@@ -5,6 +5,9 @@
 
 {% block content %}
 <h1>Bienvenido a nuestra tienda</h1>
+{% if user.is_authenticated %}
+    <p>Hola, {{ user.username }}! Disfruta del sitio!</p>
+{% endif %}
 <p>Explora nuestra colección.</p>
 <h2>Catálogo de Camisetas</h2>
 <div class= "card-container">

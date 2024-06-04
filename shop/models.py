@@ -45,6 +45,9 @@ class ElementoCarrito(models.Model):
     carrito = models.ForeignKey(Carrito, related_name='elementos', on_delete=models.CASCADE)
     remera = models.ForeignKey(Remera, on_delete=models.CASCADE)
     cantidad = models.PositiveIntegerField(default=1)
+    
+    def get_total_precio(self):
+        return self.remera.precio * self.cantidad
 
     def __str__(self):
         return f'{self.cantidad} x {self.remera.nombre}'

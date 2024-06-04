@@ -1,7 +1,9 @@
 {% extends 'shop/base.html' %}
 
+{% block title %}Carrito de compras{% endblock %}
+
 {% block content %}
-<h1>Mi Carrito</h1>
+<h1>Tu Carrito</h1>
 {% if elementos %}
     <table>
         <thead>
@@ -33,7 +35,7 @@
             {% endfor %}
         </tbody>
     </table>
-    <h2>Total: ${{ carrito.get_total_precio }}</h2>
+    <h2>Total: ${{ total_compra }}</h2>
 {% else %}
     <p>Tu carrito está vacío.</p>
 {% endif %}

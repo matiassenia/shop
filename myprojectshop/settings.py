@@ -106,6 +106,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = '/home/cpeit/myproject/static'
+
 STATICFILES_DIRS = [
     BASE_DIR / "shop/static",
 ]
@@ -118,6 +120,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/carrito'
+LOGOUT_REDIRECT_URL = '/login'
 LOGIN_URL = 'login'
