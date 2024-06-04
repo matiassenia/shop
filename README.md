@@ -27,15 +27,18 @@ Este es un proyecto de tienda en línea desarrollado con Django. Permite a los u
 
 2. **Instala las dependencias del proyecto utilizando pip:**
 
-pip install -r requirements.txt
+   ```bash
+   pip install -r requirements.txt
 
 3. **Realiza las migraciones de la base de datos:**
 
-python manage.py migrate
+    ```bash
+    python manage.py migrate
 
 4. **Inicia el servidor de desarrollo:**
 
-python manage.py runserver
+    ```bash
+    python manage.py runserver
 
 5. **Visita http://127.0.0.1:8000/shop en tu navegador web para ver la aplicación.**
 
