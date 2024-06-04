@@ -61,9 +61,7 @@ def actualizar_cantidad_elemento_carrito(request, elemento_id):
                 pass
     return redirect('carrito')
 
-
 #Registro de usuario
-
 def registro(request):
     if request.method == 'POST':
         form = RegistroForm (request.POST)
