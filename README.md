@@ -39,28 +39,29 @@ python manage.py runserver
 
 5. **Visita http://127.0.0.1:8000/shop en tu navegador web para ver la aplicación.**
 
-Uso
-Registro de Usuario
+## Uso
+**Registro de Usuario**
 
 Navega a /shop/registro/ para crear una nueva cuenta de usuario.
-Inicio de Sesión
+**Inicio de Sesión**
 
 Navega a /shop/login/ para iniciar sesión en tu cuenta.
-Ver Productos
+**Ver Productos**
 
-La página principal /shop/home/ mostrará una lista de todas las remeras disponibles.
-Agregar al Carrito
+La página principal /shop/home/ mostrará una lista de todas las camisetas disponibles.
+**Agregar al Carrito**
 
 En la vista de detalles de una remera, puedes agregarla al carrito.
-Ver Carrito
+**Ver Carrito**
 
-Navega a /shop/carrito/ para ver los artículos en tu carrito, actualizar cantidades o eliminar artículos.
-Contacto
+Navega a /shop/carrito/ para ver los artículos en tu carrito, actualizar cantidades o **eliminar artículos.**
 
+**Contacto**
 Navega a /shop/contacto/ para ver la página de contacto.
-Estructura del Proyecto
-shop: Aplicación principal con vistas, modelos, formularios y templates.
-templates: Carpeta de plantillas HTML para renderizar vistas.
-static: Archivos estáticos (CSS, JS, imágenes).
+
+# Estructura del Proyecto
+**shop: Aplicación principal con vistas, modelos, formularios y templates.**
+**templates: Carpeta de plantillas HTML para renderizar vistas.**
+**static: Archivos estáticos (CSS, JS, imágenes).**
 
 
