@@ -85,7 +85,7 @@ def login_view(request):
             user= form.get_user()
             login(request, user)
             messages.success(request, f'Bienvenido de nuevo {user.username}!')
-            return redirect('')
+            return redirect('home')
         else:
             messages.error(request, 'Nombre de usuario o contraseña incorrectos.')
     else:
