@@ -1,5 +1,5 @@
 # PASIÓN POR LA CAMISETA
-# Tienda Online de Camisetas de Futbol
+# Tienda Online de Camisetas de Fútbol
 
 Este es un proyecto de tienda en línea desarrollado con Django. Permite a los usuarios navegar por una colección de remeras, agregar artículos a un carrito de compras, y realizar acciones como registrarse, iniciar sesión y gestionar su carrito de compras.
 
