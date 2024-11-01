@@ -22,8 +22,8 @@ Este es un proyecto de tienda en línea desarrollado con Django. Permite a los u
 1. **Clonar el Repositorio**
 
    ```bash
-   git clone https://github.com/tu-usuario/tu-repositorio.git
-   cd tu-repositorio
+   git clone https://github.com/matiassenia/shop.git
+   cd shop
 
 2. **Instala las dependencias del proyecto utilizando pip:**
 
